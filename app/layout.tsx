@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
 import Head from "next/head";
-import { Inter as FontSans } from "next/font/google";
+import { playfairdisplay, raleway } from "../components/utils/fonts";
 import { cn } from "@/lib/utils";
 
 import "@/styles/globals.css";
 import { Toaster } from "@/components/ui/toaster";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   title: "Aroha (Planning - Design - Production)",
@@ -35,7 +30,8 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          playfairdisplay,
+          raleway
         )}
       >
         <main className="app">{children}</main>

@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { visibleHiddenYVariants } from "../utils/utils";
+import { visibleHiddenYVariants, visibleHiddenVariants } from "../utils/utils";
 import { FaFacebook, FaWhatsapp, FaInstagram } from "react-icons/fa";
 // import { FaXTwitter } from "react-icons/fa6";
 import { openInNewTab } from "../utils/utils";
@@ -18,7 +18,7 @@ function Footer() {
   }, [controls, inView]);
 
   return (
-    <div className="bg-[#3C3C3C] text-white px-8 py-12">
+    <div className="bg-[#3C3C3C] text-white px-8 py-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">
         <motion.div
           className="col-span-1 md:col-span-2"
@@ -27,10 +27,10 @@ function Footer() {
           initial="hidden"
           animate={controls}
         >
-          <h5 className="mb-3 text-raleway text-2xl font-bold font-playfairdisplay">
+          <h5 className="mb-3 text-2xl font-bold font-playfairdisplay">
             Aroha
           </h5>
-          <p className="text-raleway text-md">
+          <p className="font-raleway text-md">
             Aroha, based in Hyderabad, excels in event planning and themed
             decorations for birthdays, housewarmings, cradle ceremonies, saree
             ceremonies, and anniversaries. We also offer celebrity management,
@@ -87,6 +87,17 @@ function Footer() {
           </div>
         </motion.div>
       </div>
+      <motion.div
+        ref={ref}
+        variants={visibleHiddenVariants(1, 0, 2.8)}
+        initial="hidden"
+        animate={controls}
+        className="mt-6"
+      >
+        <p className="font-raleway text-white text-center">
+          Copyright &#169; 2024 Aroha. All Rights Reserved.
+        </p>
+      </motion.div>
     </div>
   );
 }

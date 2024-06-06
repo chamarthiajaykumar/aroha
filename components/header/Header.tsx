@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import Logo from "@/public/Logo.png";
+import Logo2 from "@/public/Logo2.png";
 import Image from "next/image";
 
 interface HeaderProps {
@@ -14,14 +15,24 @@ function Header({ inView }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`shadow-md w-full fixed top-0 left-0 z-50 bg-white`}>
-      <div className="px-10 py-4 md:flex justify-between items-center">
-        <Image src={Logo} alt="Logo" height={60} />
+    <div
+      className={`shadow-md  w-full fixed top-0 left-0 z-50 ${
+        inView ? "transparent" : "bg-white"
+      }`}
+    >
+      <div className="px-10 md:px-20 backdrop-blur-md py-4 md:flex justify-between items-center">
+        <Image
+          src={inView ? Logo : Logo2}
+          alt="Logo"
+          height={inView ? 60 : 48}
+        />
 
         {/* Desktop */}
         <div className="hidden md:block">
           <ul
-            className={`list-none md:flex items-center md:gap-x-12 text-md text-black`}
+            className={`list-none md:flex items-center md:gap-x-12 text-md ${
+              inView ? "text-white" : "text-black"
+            } `}
           >
             <li className="font-semibold md:my-0 font-raleway cursor-pointer">
               <Link
@@ -92,8 +103,8 @@ function Header({ inView }: HeaderProps) {
             isOpen ? "top-[86px]" : "top-[-490px]"
           }`}
         >
-          <ul className="list-none md:flex items-center md:gap-x-8 text-lg font-raleway">
-            <li className="font-semibold my-4 md:my-0">
+          <ul className="list-none md:flex items-center md:gap-x-8 text-lg">
+            <li className="font-semibold my-4 md:my-0 font-raleway">
               <Link
                 onClick={() => setIsOpen(false)}
                 className="pb-1"
@@ -106,7 +117,7 @@ function Header({ inView }: HeaderProps) {
                 Home
               </Link>
             </li>
-            <li className="font-semibold my-4 md:my-0">
+            <li className="font-semibold my-4 md:my-0 font-raleway">
               <Link
                 onClick={() => setIsOpen(false)}
                 className="pb-1"
@@ -119,7 +130,7 @@ function Header({ inView }: HeaderProps) {
                 Services
               </Link>
             </li>
-            <li className="font-semibold my-4 md:my-0">
+            <li className="font-semibold my-4 md:my-0 font-raleway">
               <Link
                 onClick={() => setIsOpen(false)}
                 className="pb-1"
@@ -132,7 +143,7 @@ function Header({ inView }: HeaderProps) {
                 Testimonial
               </Link>
             </li>
-            <li className="font-semibold my-4 md:my-0">
+            <li className="font-semibold my-4 md:my-0 font-raleway">
               <Link
                 onClick={() => setIsOpen(false)}
                 className="pb-1"

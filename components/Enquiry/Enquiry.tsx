@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { visibleHiddenYVariants } from "../utils/utils";
@@ -20,6 +20,7 @@ import { Textarea } from "../ui/textarea";
 import { Element } from "react-scroll";
 import axios from "axios";
 import { toast } from "../ui/use-toast";
+import { Icons } from "../ui/icons";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -42,6 +43,8 @@ function Enquiry() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
+  const [isLoading, setIsLoding] = useState<boolean>(false);
+
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -59,6 +62,7 @@ function Enquiry() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoding(true);
     const postData = {
       email: values.email,
       name: values.name,
@@ -73,10 +77,14 @@ function Enquiry() {
             title: "Successfully",
             description: res.data.message,
           });
+          form.reset();
         }
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setIsLoding(false);
       });
   }
 
@@ -162,7 +170,14 @@ function Enquiry() {
                 />
 
                 <div className="flex justify-center">
-                  <Button className="mt-6 px-6 py-2" type="submit">
+                  <Button
+                    disabled={isLoading}
+                    className="mt-6 px-8 py-2"
+                    type="submit"
+                  >
+                    {isLoading && (
+                      <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                    )}
                     Submit
                   </Button>
                 </div>

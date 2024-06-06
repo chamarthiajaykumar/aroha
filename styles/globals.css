@@ -116,10 +116,20 @@
 
 @media screen and (max-width: 576px) {
   .cardResponsiveHeight {
-    height: 432px;
+    height: 438px;
   }
 }
 
 .iconhover:hover {
   color: #327b7c;
+}
+
+.contactIcon {
+  background: linear-gradient(
+    45deg,
+    rgba(86, 86, 223, 0.8) 10.16%,
+    rgba(2, 188, 243, 0.8) 89.45%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
