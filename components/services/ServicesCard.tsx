@@ -40,7 +40,6 @@ function ServicesCard({ title, description, image }: Props) {
             className="object-cover h-[160px] w-full"
             alt={title}
             placeholder="blur"
-            layout="responsive"
             quality={70}
           />
         </CardDescription>
