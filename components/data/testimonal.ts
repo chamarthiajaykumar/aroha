@@ -1,12 +1,12 @@
 export const testimonialinfo = [
   {
     testimonial:
-      "After meeting with your team we knew you were the perfect match for us. I hired Amour for my wedding because I honestly had non idea where to begin and I had to do it in 10 months. Your event planning solutions have helped me a lot.",
+      "Choosing Aroha  was one of the best decisions we made for our corporate event. Their expertise in coordinating every aspect of the day, from logistics to design, was evident throughout the entire process. I wouldn't hesitate to hire them again for our future events.",
     client: "Ajay Kumar",
   },
   {
     testimonial:
-      "After meeting with your team we knew you were the perfect match for us. I hired Amour for my wedding because I honestly had non idea where to begin and I had to do it in 10 months. Your event planning solutions have helped me a lot.",
+      "I cannot thank Team Aroha events enough for their incredible work on our wedding day. From start to finish, they were attentive, organized, and went above and beyond to ensure everything ran smoothly. Our guests are still talking about how seamless and beautiful the event was!",
     client: "Chandu Pusuluri",
   },
 ];

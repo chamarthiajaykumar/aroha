@@ -24,7 +24,7 @@ const Testimonals = () => {
   }, [controls, inView]);
 
   return (
-    <Element className="pt-32 pb-8" name="testimonial">
+    <Element className="pt-28 md:pt-32 pb-8" name="testimonial">
       <div className="px-8 md:px-16">
         <motion.div
           ref={ref}

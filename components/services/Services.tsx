@@ -18,7 +18,7 @@ function Services() {
   }, [controls, inView]);
 
   return (
-    <Element className="pt-24 pb-4 bg-[#F7F7F7]" name="services">
+    <Element className="pt-20 md:pt-24 pb-4 bg-[#F7F7F7]" name="services">
       <div className="px-4 md:px-16">
         <motion.div
           className="py-4"
