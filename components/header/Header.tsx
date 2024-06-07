@@ -34,9 +34,9 @@ function Header({ inView }: HeaderProps) {
               inView ? "text-white" : "text-black"
             } `}
           >
-            <li className="font-semibold md:my-0 font-raleway cursor-pointer">
+            <li className="font-semibold md:my-0 cursor-pointer">
               <Link
-                className="pb-1"
+                className="pb-1 font-raleway"
                 activeClass={`${inView ? "activeDark" : "activeLight"}`}
                 to="home"
                 smooth={true}
@@ -46,9 +46,9 @@ function Header({ inView }: HeaderProps) {
                 Home
               </Link>
             </li>
-            <li className="font-semibold md:my-0 font-raleway cursor-pointer">
+            <li className="font-semibold md:my-0 cursor-pointer">
               <Link
-                className="pb-1"
+                className="pb-1 font-raleway"
                 activeClass={`${inView ? "activeDark" : "activeLight"}`}
                 to="services"
                 smooth={true}
@@ -58,9 +58,9 @@ function Header({ inView }: HeaderProps) {
                 Services
               </Link>
             </li>
-            <li className="font-semibold md:my-0 font-raleway cursor-pointer">
+            <li className="font-semibold md:my-0 cursor-pointer">
               <Link
-                className="pb-1"
+                className="pb-1 font-raleway"
                 offset={10}
                 activeClass={`${inView ? "activeDark" : "activeLight"}`}
                 to="testimonial"
@@ -71,9 +71,9 @@ function Header({ inView }: HeaderProps) {
                 Testimonial
               </Link>
             </li>
-            <li className="font-semibold md:my-0 font-raleway cursor-pointer">
+            <li className="font-semibold md:my-0 cursor-pointer">
               <Link
-                className="pb-1"
+                className="pb-1 font-raleway"
                 activeClass={`${inView ? "activeDark" : "activeLight"}`}
                 to="contact"
                 smooth={true}
@@ -89,25 +89,25 @@ function Header({ inView }: HeaderProps) {
         {/* Mobile */}
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="absolute right-8 top-8 cursor-pointer md:hidden w-7 h-7"
+          className={`absolute right-8 top-8 cursor-pointer md:hidden w-7 h-7`}
         >
           {isOpen ? (
-            <IoClose size={28} color={`#000`} />
+            <IoClose size={28} color={`${inView ? "#fff" : "#000"}`} />
           ) : (
-            <GiHamburgerMenu size={24} color={`#000`} />
+            <GiHamburgerMenu size={24} color={`${inView ? "#fff" : "#000"}`} />
           )}
         </div>
 
         <div
           className={`bg-white w-full md-hidden pb-4 absolute z-[-1] left-0 pl-9 transition-all duration-500 ease-in ${
-            isOpen ? "top-[86px]" : "top-[-490px]"
+            isOpen ? `${inView ? "top-[86px]" : "top-[80px]"}` : "top-[-490px]"
           }`}
         >
           <ul className="list-none md:flex items-center md:gap-x-8 text-lg">
-            <li className="font-semibold my-4 md:my-0 font-raleway">
+            <li className="font-semibold my-4 md:my-0">
               <Link
                 onClick={() => setIsOpen(false)}
-                className="pb-1"
+                className="pb-1 font-raleway"
                 activeClass={`activeLight`}
                 to="home"
                 smooth={true}
@@ -117,10 +117,10 @@ function Header({ inView }: HeaderProps) {
                 Home
               </Link>
             </li>
-            <li className="font-semibold my-4 md:my-0 font-raleway">
+            <li className="font-semibold my-4 md:my-0">
               <Link
                 onClick={() => setIsOpen(false)}
-                className="pb-1"
+                className="pb-1 font-raleway"
                 activeClass={`activeLight`}
                 to="services"
                 smooth={true}
@@ -130,10 +130,10 @@ function Header({ inView }: HeaderProps) {
                 Services
               </Link>
             </li>
-            <li className="font-semibold my-4 md:my-0 font-raleway">
+            <li className="font-semibold my-4 md:my-0">
               <Link
                 onClick={() => setIsOpen(false)}
-                className="pb-1"
+                className="pb-1 font-raleway"
                 activeClass={`activeLight`}
                 to="testimonial"
                 smooth={true}
@@ -143,10 +143,10 @@ function Header({ inView }: HeaderProps) {
                 Testimonial
               </Link>
             </li>
-            <li className="font-semibold my-4 md:my-0 font-raleway">
+            <li className="font-semibold my-4 md:my-0">
               <Link
                 onClick={() => setIsOpen(false)}
-                className="pb-1"
+                className="pb-1 font-raleway"
                 activeClass={`activeLight`}
                 to="contact"
                 smooth={true}

@@ -1,6 +1,4 @@
-import { Loader2, type Icon as LucideIcon } from "lucide-react";
-
-export type Icon = LucideIcon;
+import { Loader2 } from "lucide-react";
 
 export const Icons = {
   spinner: Loader2,

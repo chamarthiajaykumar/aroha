@@ -94,7 +94,7 @@ function Footer() {
         animate={controls}
         className="mt-6"
       >
-        <p className="font-raleway text-white text-center">
+        <p className="font-raleway text-white text-center text-md">
           Copyright &#169; 2024 Aroha. All Rights Reserved.
         </p>
       </motion.div>
